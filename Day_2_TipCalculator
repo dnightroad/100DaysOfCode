@@ -14,5 +14,5 @@ if  percentage == "15":
 spliting = input("How many people to split the bill?\n")
 
 bill /= int(spliting)
-bill = int(bill)
+bill = round(bill, 2)
 print(f"Each person should pay {bill} Euro ")
