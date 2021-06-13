@@ -1,0 +1,18 @@
+#Welcome message
+total_bill = input("Welcome to the tip calculator\n What was the total bill?\n")
+bill = float(total_bill)
+#calculate persentage for the tip
+percentage = input("What percentage tip would you like to give? 10,12, or 15 \n")
+if percentage == 12 :
+  bill *= 1.2
+ 
+if  percentage == "10": 
+  bill *= 1.0
+if  percentage == "15":
+  bill *= 1.5
+#Split the bill with the included tip
+spliting = input("How many people to split the bill?\n")
+
+bill /= int(spliting)
+bill = int(bill)
+print(f"Each person should pay {bill} Euro ")
