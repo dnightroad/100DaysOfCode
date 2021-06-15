@@ -1,0 +1,77 @@
+#Importing random number generator
+import random
+a = 1
+b = 4
+output = random.randrange(a, b)
+player = input("Rock(1), Paper(2) Scissors(3),\n what do you play with?\n")
+if player == "1":
+  print(
+    ''' 
+         _______
+     ---'   ____)
+           (_____)
+           (_____)
+           (____)
+     ---.__(___)
+    '''
+  )
+elif player == "2":
+  print('''
+            _______
+        ---'   ____)____
+                  ______)
+                 _______)
+                _______)
+    ---.__________)
+  ''')
+else:
+  print('''
+         _______
+     ---'   ____)____
+                  ______)
+             __________)
+         (____)
+    ---.__(___)  
+  ''')
+
+if output == 1:
+  print(
+    ''' 
+         _______
+     ---'   ____)
+           (_____)
+           (_____)
+           (____)
+     ---.__(___)
+    '''
+  )
+elif output == 2:
+  print('''
+            _______
+        ---'   ____)____
+                  ______)
+                 _______)
+                _______)
+    ---.__________)
+  ''')
+else:
+  print('''
+         _______
+     ---'   ____)____
+                  ______)
+             __________)
+         (____)
+    ---.__(___)  
+  ''')
+
+player_output = int(player)
+if player_output == output:
+  print("it's a draw")
+elif player_output == 1 and output ==2:
+  print("Computer wins")
+elif player_output == 2 and output == 3:
+  print("Computer wins")
+elif player_output == 3 and output == 1:
+  print("Computer wins")
+else:
+  print("You win! Congrats!")
