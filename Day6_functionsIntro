@@ -1,0 +1,7 @@
+#Functions intro
+
+def my_function(name):
+  print("Hello", name)
+  print("Bye")
+name = input("What is your name?")
+my_function(name)
