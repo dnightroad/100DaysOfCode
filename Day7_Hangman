@@ -1,0 +1,124 @@
+#hangman
+
+word_list = ["ardvark", "baboon", "camel"]
+hangman_start = '''
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+  =========
+'''
+hangman_step1 = '''
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+  =========
+'''
+hangman_step2 = '''
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+  =========
+'''
+hangman_step3 = '''
+    +---+
+    |   |
+    O   |
+   /|   |
+        |
+        |
+  =========
+'''
+hangman_step4 = '''
+    +---+
+    |   |
+    O   |
+   /|\  |
+        |
+        |
+  =========
+'''
+hangman_step5 = '''
+    +---+
+    |   |
+    O   |
+   /|\  |
+   /    |
+        |
+  =========
+'''
+hangman_end = '''
+    +---+
+    |   |
+    O   |
+   /|\  |
+   / \  |
+        |
+  =========
+
+'''
+hangman_status = [hangman_start, hangman_step1, hangman_step2, hangman_step3, hangman_step4, hangman_step5, hangman_end]
+import random
+#starting message
+print('''
+   _                                             
+  | |                                            
+  | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+  | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+  | | | | (_| | | | | (_| | | | | | | (_| | | | |
+  |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/                       
+''')
+random_index = random.randrange(0, len(word_list))
+random_word = word_list[random_index]
+
+life =7
+a=0
+letter = []
+#populate the list with empty strings
+for char in random_word:
+  letter.append('_')
+#while loop 
+while life > 0:
+  index = 0
+  match = 0
+  guess = input("\nGuess a letter:\n")
+  #check word for each character
+  for char in random_word:
+    
+    if guess == char:
+      
+      letter[index]=char
+      match += 1
+      index +=1
+    
+    else:
+      
+      index +=1
+    
+  if match == 0:
+      print(hangman_status[a])
+      a +=1
+      life -=1
+  counter = letter.count("_")
+  if counter == 0:
+    break 
+  for char in letter:
+    print(char + " ", end="")
+if life == 0: 
+ print("Game over! You have been HANGED!")
+else:
+  print("Congrats , you were not hanged, you can live.")
+
+  
+
+
