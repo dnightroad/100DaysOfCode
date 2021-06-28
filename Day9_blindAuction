@@ -1,0 +1,33 @@
+from replit import clear
+
+bid_dict = {}
+ 
+def find_higher_bid(bidding_record):
+  highest_bid = 0
+  for bidder in bidding_record:
+    amount = bidding_record[bidder]
+    if amount > highest_bid:
+      highest_bid = amount
+      winner = bidder
+  print(f"The winner is {winner} with {highest_bid} bid")
+  
+others = "yes" 
+while others != "no":
+  
+  name = input("What is your name? ")
+  bid = int(input("What is your bid? "))
+  bid_dict[name] = bid
+  
+  
+  
+  others = input("Are there any other bidders?  Yes or no?")
+  clear()
+  if others == "no":
+    find_higher_bid(bid_dict)
+  else:
+    clear()
+    
+  
+
+
+  
