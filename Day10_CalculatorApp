@@ -1,0 +1,34 @@
+def add (n1, n2):
+  return n1+n2
+def substract(n1, n2):
+  return n1 - n2
+def multiply(n1, n2):
+  return n1 * n2
+def last(n1, n2):
+  return n1/n2
+from art import logo
+print(logo)
+print("Welcome to the calculator")
+continue_math = "yes"
+sum = 0
+while continue_math != "no":
+  n1 = float(input("What is your first number?"))
+  n2 = float(input("What is your second number?"))
+  math = input("What would you like to do with those? \n + \n - \n * \n / \n")
+  if math == "+":
+    sum += add(n1, n2)
+    print (sum)
+  elif math == "-":
+    sum += substract(n1, n2)
+    print(sum)
+  elif math == "*":
+    sum += multiply(n1, n2)
+    print (sum)
+  else:
+    sum += last(n1, n2)
+    print(sum)
+
+  continue_math = input("Would you like to continue - yes or no? ")
+  if continue_math == "no":
+    sum = 0
+
