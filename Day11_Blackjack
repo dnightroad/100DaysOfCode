@@ -1,0 +1,44 @@
+#I am not a fan of the game and it is a bit incomplete I guess
+
+import random
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+total = 0  
+total_cs = 0
+total_player = []
+total_casino = []
+def random_cards():
+  card = cards[random.randrange(0,13)]
+  return card
+game = "yes"
+def check_pl():
+  total = 0
+  for card in total_player:
+    total += card
+  return total
+while game != "no":
+  casino = random_cards()
+  total_casino.append(casino)
+  game = input("Would you like a card?")
+  if game =="yes":
+    player = random_cards()
+    total_player.append(player)
+    print(player)
+  if check_pl() > 21:
+    print("You loose")
+    break
+  if game == "no":
+    break
+
+
+    
+      
+print(f"You have a total {check_pl()}")
+for card in total_casino:
+  total_cs += card
+print(f"The casino has {total_cs} ")
+
+
+
+
+
+
