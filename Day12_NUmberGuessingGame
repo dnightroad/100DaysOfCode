@@ -1,0 +1,46 @@
+#Number Guessing Game Objectives:
+logo = '''
+                                                              __                  
+     ____ ___  _____  __________     ____  __  ______ ___  / /_  ___  __________
+    / __ `/ / / / _ \/ ___/ ___/    / __ \/ / / / __ `__ \/ __ \/ _ \/ ___/ ___/
+   / /_/ / /_/ /  __(__  |__  )    / / / / /_/ / / / / / / /_/ /  __/ /  (__  ) 
+   \__, /\__,_/\___/____/____/____/_/ /_/\__,_/_/ /_/ /_/_.___/\___/_/  /____/  
+  /____/                    /_____/   
+'''
+print(logo)
+import random
+# a function to generate numbers
+def random_number():
+  number = random.randrange(0, 100)
+  return number
+
+# a function to compare the numbers
+
+#introduction
+print("Welcome to the number guessing game!\n I am thinking of a number between 1 and 100, guess which one! \n")
+
+guess = False
+level = input("Choose a dificulty. Type 'easy' or 'hard': " )
+if level =="easy":
+  attempts = 10
+else:
+  attempts = 5
+print(f"You have {attempts} attempts")
+computer_number = random_number()
+while guess is False :
+  player_guess = int(input("Make a guess: "))
+  if player_guess < computer_number:
+    print("Too low")
+  elif player_guess > computer_number:
+    print("Too high")
+  elif player_guess == computer_number:
+    print("Congrats you guessed right!")
+    guess = True
+  attempts -=1
+  if attempts == 0:
+    print("You loose")
+    break
+  print (f"You have {attempts} attempts remaining!")
+  
+  
+
