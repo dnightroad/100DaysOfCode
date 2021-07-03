@@ -1,0 +1,51 @@
+#insert the logo
+from art import logo, vs
+print (logo)
+#function for defining a random generated item from the list
+import random
+from game_data import data
+
+def random_person():
+  person = data[random.randint(0,50)]
+  followers= person["follower_count"]
+  name = person["name"]
+  description = person["description"]
+  country = person["country"]
+  print(f"{name}, a {description} from {country}")
+  return followers
+
+game = True
+score = 0
+#function to compare the followers
+def compare_followers(a, b, c):
+  if a > b:
+    winner = a
+  elif b > a:
+    winner = b
+  if c == winner:
+    guess = True
+  else:
+    guess = False
+  return guess
+play = True
+#main code goes here
+while play is True:
+  print("Option A: ")
+  compare_a = random_person()
+  print(vs)
+  print("Option B: ")
+  compare_b = random_person()
+  user = input("Who do you think has more followers? a or b? ")
+  if user == "a":
+    user = compare_a
+  else:
+    user = compare_b
+
+  guess = compare_followers(compare_a, compare_b, user)
+  # print (guess)
+  if guess == True:
+    score +=1
+    print(f"You are right! Your score is {score}")
+  else:
+    print("You loose!")
+    play = False
