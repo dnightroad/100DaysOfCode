@@ -1,0 +1,20 @@
+#learning about OOP using a turtle
+from turtle import *
+
+timmy = Turtle()
+timmy.shape("turtle")
+timmy.color("DarkSeaGreen4")
+
+begin_fill()
+#infinite loop for infinite drawing
+while True:
+    timmy.forward(200)
+    timmy.left(170)
+    timmy.forward(250)
+    
+end_fill()
+done()
+timmy.forward(200)
+
+my_screen = Screen()
+my_screen.exitonclick()
