@@ -1,0 +1,65 @@
+# import turtle
+import random
+from turtle import Turtle, Screen
+from random import choice
+
+timmy_the_cool_turtle = Turtle()
+timmy_the_cool_turtle.shape("turtle")
+timmy_the_cool_turtle.color("Green")
+screen = Screen()
+# DRAWING SHAPES
+# shape = 3
+#
+#
+# def shape_form(angle):
+#     timmy_the_cool_turtle.forward(100)
+#     timmy_the_cool_turtle.left(angle)
+#
+#
+# while shape != 11:
+#     color = choice(["red", "blue", "green", "black", "grey", "pink", "aqua"])
+#     timmy_the_cool_turtle.pencolor(color)
+#     angle = 360 / shape
+#     for i in range(shape):
+#         shape_form(angle)
+#     shape += 1
+
+##RANDOM WALK
+# dice = random.randint(1, 100)
+# timmy_the_cool_turtle.pensize(20)
+#
+# directions = [0, 90, 160, 270]
+#
+#
+# def movement():
+#     random_move = dice
+#     timmy_the_cool_turtle.setheading(choice(directions))
+#     timmy_the_cool_turtle.forward(random_move)
+#
+#
+# def random_color():
+#     color_r = random.random()
+#     color_b = random.random()
+#     color_g = random.random()
+#     timmy_the_cool_turtle.pencolor((color_g, color_b, color_r))
+#
+#
+# while dice > 0:
+#     random_color()
+#     movement()
+#     dice -= 1
+###A SPIROGRAPH
+
+def spirograph():
+    color_r = random.random()
+    color_b = random.random()
+    color_g = random.random()
+    timmy_the_cool_turtle.pencolor((color_g, color_b, color_r))
+    timmy_the_cool_turtle.circle(100)
+
+timmy_the_cool_turtle.speed(0)
+for i in range(100):
+    spirograph()
+    timmy_the_cool_turtle.left(10+i)
+    timmy_the_cool_turtle.forward(10)
+screen.exitonclick()
