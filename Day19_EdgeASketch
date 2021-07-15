@@ -1,0 +1,31 @@
+# edge a sketch program that draws with the keyboard arrows
+from turtle import Turtle, Screen, onkey, listen
+
+timmy_the_cool_turtle = Turtle()
+timmy_the_cool_turtle.shape("arrow")
+timmy_the_cool_turtle.color("Green")
+screen = Screen()
+
+screen.setup(500, 300)
+
+
+def right_move():
+    timmy_the_cool_turtle.forward(10)
+
+
+def tilt_move():
+    timmy_the_cool_turtle.left(10)
+
+
+def tilt_move_back():
+    timmy_the_cool_turtle.left(-10)
+
+
+screen.onkey(right_move, 'Right')
+screen.onkey(right_move, 'Left')
+screen.onkey(tilt_move, 'Up')
+screen.onkey(tilt_move_back, 'Down')
+
+screen.listen()
+
+screen.exitonclick()
