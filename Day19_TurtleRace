@@ -1,0 +1,65 @@
+# edge a sketch program that draws with the keyboard arrows
+import random
+import turtle
+from turtle import Turtle, Screen
+
+screen = Screen()
+screen.setup(500, 350)
+green = Turtle()
+green.shape("turtle")
+green.color("Green")
+blue = Turtle()
+blue.shape("turtle")
+blue.color("Blue")
+red = Turtle()
+red.shape("turtle")
+red.color("Red")
+yellow = Turtle()
+yellow.shape("turtle")
+yellow.color("Yellow")
+orange = Turtle()
+orange.shape("turtle")
+orange.color("Orange")
+turtles = [green, blue, yellow, red, orange]
+left = -200
+starting_point = 100
+index = 0
+positions = []
+guess = turtle.textinput("Turtle game", "Guess the winning turtle? (green/blue/red/orange/yellow)")
+game = True
+
+
+def race(animal):
+    global game
+    random_move = random.randrange(0, 45)
+    current_position = (racing_dict[animal]['horizontal']) + random_move
+    racing_dict[animal]['horizontal'] = current_position
+    animal.goto(current_position, racing_dict[animal]['vertical'])
+
+    if current_position >= 180:
+        winner = animal.color()
+        animal.circle(20)
+        color = str(winner[0])
+
+        if guess == color.lower():
+            print("You guessed right!")
+
+        else:
+            print("You guessed wrong!")
+        print(f"Winner is {winner[0]}")
+        game = False
+
+
+for animal in turtles:
+    animal.penup()
+    animal.goto(left, starting_point)
+    positions.append(starting_point)
+    starting_point -= 50
+    animal.speed("slow")
+racing_dict = {turtles[i]: {'vertical': positions[i], 'horizontal': -200} for i in range(len(turtles))}
+
+while game == True:
+    for i in turtles:
+        race(i)
+
+screen.exitonclick()
