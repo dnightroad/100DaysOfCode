@@ -1,4 +1,4 @@
-# edge a sketch program that draws with the keyboard arrows
+# A turtle race, place your bet and hope for your turtle to win!
 import random
 import turtle
 from turtle import Turtle, Screen
