@@ -61,5 +61,7 @@ racing_dict = {turtles[i]: {'vertical': positions[i], 'horizontal': -200} for i 
 while game == True:
     for i in turtles:
         race(i)
+        if racing_dict[i]['horizontal']>=180:
+            break
 
 screen.exitonclick()
